@@ -1,6 +1,12 @@
 # AWS DDNS
 
-A linux service to periodically check for public IP address updates and change a record in Route53 using Python and AWS' Python SDK library: boto3. Pretty much a dynamic DNS solution. Compatible on-premise and EC2 servers.
+A linux service to periodically check for public IP address changes. Updates Route53 DNS record using Python and AWS's Python SDK library: boto3. Pretty much a dynamic DNS solution.
+
+Compatible with:
+
+:heavy_check_mark: EC2 instances
+
+:heavy_check_mark: On-premise servers
 
 ## Requirements
 - Linux
@@ -22,7 +28,7 @@ Below is a recommended IAM policy for the EC2 role or IAM user. This policy foll
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "VisualEditor0",
+            "Sid": "AllowRoute53RecordUpdate",
             "Effect": "Allow",
             "Action": "route53:ChangeResourceRecordSets",
             "Resource": "arn:aws:route53:::hostedzone/HOSTED_ZONE_ID"
