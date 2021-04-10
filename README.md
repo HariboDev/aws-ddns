@@ -78,6 +78,11 @@ When the service is running, the Python interpreter is used to:
   - Attempts to update the Route53 DNS record
   - Updates `aws-dns.json` data file to hold the new public IP address
 
+To view the logs to check for success or failures, execute the following command:
+```bash
+sudo journalctl -xe -u aws-ddns.service -f
+```
+
 ## Uninstallation
 ```bash
 ## Move into the directory of the repository
